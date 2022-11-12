@@ -1,0 +1,25 @@
+<div  class="h-screen flex flex-col items-center justify-center bg-slate-50">
+  <p class="text-blue-500 text-xl mb-3">
+    Welcome to Shipped
+  </p>
+  <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+  <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2">
+    Email
+  </label>
+  <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email" formControlName="email" />
+  </div>
+  <div class="mb-6">
+     <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+    Password
+  </label>
+  <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="Password" formControlName="password" />
+  </div>
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" [disabled]="loginForm.invalid">
+    Sign In
+  </button>
+</form>
+<p class="cursor-default text-center text-gray-500 text-xs hover:text-sm hover:text-blue-700" (click)="register()">
+      Click here to register instead
+</p>
+</div>

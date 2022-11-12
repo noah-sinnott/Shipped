@@ -1,0 +1,11 @@
+<p (click)="sendToLogin()">Login Instead</p>
+
+<form [formGroup]="registerForm" (ngSubmit)="handleSubmit()">
+  <input placeholder="First Name" formControlName="firstName" />
+  <input placeholder="Last Name" formControlName="lastName" />
+  <input placeholder="Email" formControlName="email" />
+  <input type="password" placeholder="Password" formControlName="password" />
+  <button type="submit" [disabled]="registerForm.invalid">
+    Submit
+  </button>
+</form>

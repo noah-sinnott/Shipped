@@ -1,8 +1,24 @@
-<app-tracking (newItemEvent)="addItem($event)" [items]="items.data"></app-tracking>
+<div class="flex flex-row mt-10">
 
-<form [formGroup]="addForm" (ngSubmit)="handleSubmit()">
-  <input type="text" formControlName="code">
-  <select name="cars" id="cars" formControlName="carrier">
+<div class="w-1/6">
+  <div class="h-fit flex flex-col items-center justify-center bg-slate-50">
+  <p class="text-blue-500 text-xl mb-3">
+    Add a item to Track
+  </p>
+
+<form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"[formGroup]="addForm" (ngSubmit)="handleSubmit()">
+  <div class="mb-4" >
+    <label class="block text-gray-700 text-sm font-bold mb-2">
+      Tracking code
+    </label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" formControlName="code">
+  </div>
+
+<div class="mb-6">
+  <label class="block text-gray-700 text-sm font-bold mb-2">
+    Select carrier
+  </label>
+   <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="cars" id="cars" formControlName="carrier">
     <option value="royal-mail">royal-mail</option>
     <option value="ups">ups</option>
     <option value="dhl">dhl</option>
@@ -11,8 +27,29 @@
     <option value="usps">usps</option>
   <option value="usps-international">usps-international</option>
   </select>
-  <input type="submit" [disabled]="addForm.invalid">
-</form>
+</div>
+ 
 
+<button
+  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+  type="submit" [disabled]="addForm.invalid">
+  Add item
+</button></form>
+</div>
+</div>
 
-<app-show-item [item]="selectedItem"></app-show-item>
+<div class="w-3/12">
+  <p class="text-blue-500 text-xl text-center mb-3">
+   Tracked Items
+  </p>
+  <app-tracking (newItemEvent)="addItem($event)" [items]="items.data"></app-tracking>
+</div>
+
+<div class="w-7/12">
+<p class="text-blue-500 text-xl text-center mb-3">
+  Fetured Item
+</p>
+  <app-show-item [item]="selectedItem"></app-show-item>
+</div>
+
+</div>

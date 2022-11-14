@@ -1,11 +1,14 @@
-<div *ngFor="let item of items">
-  <div >
-      <p>{{item.data[0].status}}</p>
-      <p> {{item.data[0].tracking_number}}</p>
-      <p> {{item.data[0].carrier_code}}</p>
-      <button (click)="handleClick(item.data[0].origin_info.trackinfo)">Get more info</button>
-  </div>
-  <div>
+
+<div class="flex flex-row" *ngFor="let item of items">
+  <div class="bg-white text-center w-full shadow-md rounded px-8 pt-6 pb-8 mb-4 ml-10">
+
+  
+      <p class="block text-gray-700 text-sm font-bold mb-2">{{item.data[0].status}}</p>
+      <p class="block text-gray-700 text-sm font-bold mb-2">{{item.data[0].tracking_number}}</p>
+      <p class="block text-gray-700 text-sm font-bold mb-2">{{item.data[0].carrier_code}}</p>
+      <button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"(click)="handleClick(item.data[0].origin_info.trackinfo)">Get more info</button>
+  
+  
 
   </div>
 </div>

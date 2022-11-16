@@ -22,8 +22,14 @@ export class TrackingComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  handleClick(item: any) {
-    this.newItemEvent.emit(item)
+  handleClick(items: any , code: any) {
+    const clensed: any[] = []
+    for (let i = 0; i < items.length; i++){
+      if (items[i].Details.length > 1) {     
+            clensed.push(items[i]);
+      }
+    }
+    this.newItemEvent.emit([clensed, code])
   }
 
   getDate(date: any) {

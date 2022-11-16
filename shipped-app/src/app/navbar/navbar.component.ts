@@ -13,32 +13,14 @@ export class NavbarComponent implements OnInit {
 
   password: any = password
   email: any = email
+  
   ngOnInit(): void {
-
-    if (email) {
- 
-
-    } else {
-      
-
-
-}
-
   }
   
-  register() {
-    this.router.navigate(['register'])
-  }
-
-  login() {
-    this.router.navigate(['login'])
-  }
-
   logout() {
     setEmail(false)
     setPassword(false)
     this.router.navigate(['login'])
   }
-
 
 }

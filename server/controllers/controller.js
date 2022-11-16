@@ -8,8 +8,9 @@ exports.Track = async (req, res) => {
     const user = await models.findOne({ email: req.body.email, password: req.body.password })
     if (user != null) {
       let tracking = false
+      const code = req.body.code.toUpperCase()
       for (let i = 0; i < user.shippments.length; i++) {
-        if (user.shippments[i].includes(req.body.carrier) === true && user.shippments[i].includes(req.body.code) === true) {
+        if (user.shippments[i].includes(req.body.carrier) == true && user.shippments[i].includes(code) == true) {
           tracking = true
         }
       }
@@ -17,13 +18,12 @@ exports.Track = async (req, res) => {
         res.status(201)
         res.send({ status: 'already tracking' })
       } else {
-        const data = await postOne(req.body.carrier, req.body.code)
-        await models.findOneAndUpdate({ email: req.body.email, password: req.body.password }, { $push: { shippments: [req.body.carrier, req.body.code] } })
+        const data = await postOne(req.body.carrier, code)
+        await models.findOneAndUpdate({ email: req.body.email, password: req.body.password }, { $push: { shippments: [req.body.carrier, code] } })
         res.status(201)
         res.send({ status: 'done', data })
       }
     } else {
-      console.log(232232)
       res.status(201)
       res.send({ status: 'not found' })
     }

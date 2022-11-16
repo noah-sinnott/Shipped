@@ -63,8 +63,4 @@ login(email: any, password: any): Observable<any[]> {
  return this.http.post<any>(`http://localhost:3001/login`, options);
   }
 
-
-
-
-
 }

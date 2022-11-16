@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
-export let email: any = "noah.sinnott123@gmail.com"
-//false
-export let password: any = "1234";
+export let email: any = false;
+
+export let password: any = false;
 
 export function setEmail(value: any) {
   email = value;

@@ -45,7 +45,7 @@ marker = L.icon({
 
 
   async getCords(adress: String) {
-    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${adress}&key=AIzaSyBtKfDP8W8SQbUWe4JhCUkwiAdwTJFl6sQ`
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${adress}&key`//add api key
     const res = await fetch(url).then(res => res.json())
     return res.results[0].geometry.location
   }

@@ -5,7 +5,7 @@ const app = express()
 const cors = require('cors')
 const router = require('./router.js')
 
-const PORT = 3001
+const PORT = 1234
 app.use(cors())
 app.use(express.json())
 app.use(router)

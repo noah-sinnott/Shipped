@@ -49,7 +49,7 @@ export class TrackComponent implements OnInit {
 
 
    refresh() {
-    this.ApiService.getInfo(password, email).subscribe((data) => this.items = data);
+     this.ApiService.getInfo(password, email).subscribe((data) => this.items = data);
   }
 
 

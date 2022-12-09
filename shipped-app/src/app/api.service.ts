@@ -16,7 +16,7 @@ export class ApiService {
         "email": email, 
     "password": password
 };
-    return this.http.post<any[]>('http://localhost:3001/getTracking', options);
+    return this.http.post<any[]>('http://localhost:1234/getTracking', options);
   }
 
 
@@ -33,7 +33,7 @@ export class ApiService {
       
     }
 
- return this.http.post<any>(`http://localhost:3001/user`, options);
+ return this.http.post<any>(`http://localhost:1234/user`, options);
   }
   
 
@@ -48,7 +48,7 @@ export class ApiService {
     "password": password
   
 };
-    return this.http.post<any>(`http://localhost:3001/track`, options);
+    return this.http.post<any>(`http://localhost:1234/track`, options);
   }
 
 
@@ -60,7 +60,7 @@ login(email: any, password: any): Observable<any[]> {
         "password": password
       
     }
- return this.http.post<any>(`http://localhost:3001/login`, options);
+ return this.http.post<any>(`http://localhost:1234/login`, options);
   }
 
 }

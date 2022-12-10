@@ -41,7 +41,7 @@ module.exports = {enviroment}
 Once you have the environment variables set up, you can run the app with the following commands: 
 
 * For the server: `npm run dev`
-* For the client: `npm start`
+* For the client: `npm start` from inside the shipped-app directory
 
 ## Usage
 

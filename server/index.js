@@ -1,5 +1,5 @@
 'use strict'
-const enviroment = require('./environment/environment') ;
+const enviroment = require('./environment/environment.env') ;
 const express = require('express')
 const app = express()
 const cors = require('cors')

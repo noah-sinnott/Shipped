@@ -1,4 +1,4 @@
-const enviroment = require('../environment/environment');
+const enviroment = require('../environment/environment.env');
 
 exports.postOne = async (carrierCode, trackingNumber) => {
   const obj = {

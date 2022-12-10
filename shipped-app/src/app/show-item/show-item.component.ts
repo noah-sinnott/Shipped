@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, Input, SimpleChanges} from '@angular/core';
 const L = require('leaflet');
-const enviroment = require('../environment/environment') ;
+const enviroment = require('../environment/environment.env') ;
 
 @Component({
   selector: 'app-show-item',

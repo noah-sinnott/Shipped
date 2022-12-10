@@ -1,4 +1,3 @@
 node_modules
 
-shipped-app\src\app\environment\environment.js
-server\environment\environment.js
+.env

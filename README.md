@@ -16,7 +16,7 @@ Shipped is a web app that helps people track packages from any provider they wan
 
 To run the project, you need to set up environment variables. 
 
-For the **shipped-app**, you will need to create a file in `Project_Folder\shipped-app\src\app\environment\environment.js` with the following variables:
+For the **shipped-app**, you will need to create a file in `Project_Folder\shipped-app\src\app\environment\environment.env` with the following variables:
 ```
 const enviroment = {
   port: '', // server port
@@ -24,7 +24,7 @@ const enviroment = {
 };
 module.exports = {enviroment}
 ```
-For the **server**, you will need to create a file in `Project_Folder\server\environment\environment.js` with the following variables:
+For the **server**, you will need to create a file in `Project_Folder\server\environment\environment.env` with the following variables:
 ```
 const enviroment = {
   'port': '', // server port

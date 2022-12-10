@@ -1,3 +1,4 @@
 node_modules
 
-/environment.js
+shipped-app\src\app\environment\environment.js
+server\environment\environment.js

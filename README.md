@@ -37,8 +37,9 @@ module.exports = {enviroment}
 
 
 ### Running the App
+next you must run `npm i` from the project folder
 
-Once you have the environment variables set up, you can run the app with the following commands: 
+Once you have the environment variables set up and ran `npm i`, you can run the app with the following commands: 
 
 * For the server: `npm run dev`
 * For the client: `npm start` from inside the shipped-app directory

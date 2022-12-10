@@ -45,7 +45,7 @@ Once you have the environment variables set up, you can run the app with the fol
 
 ## Usage
 
-Once the application is up and running, you can start tracking your own shippments. currently the app only supports 5 shipping companies but there are plans to increase the amount in the future
+Once the application is up and running, you can start tracking your own shippments. currently the app only supports 7 shipping companies but there are plans to increase the amount in the future
 
 ## Tech Stack
 

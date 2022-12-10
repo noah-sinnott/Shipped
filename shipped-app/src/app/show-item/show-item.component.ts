@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, Input, SimpleChanges} from '@angular/core';
 const L = require('leaflet');
+const enviroment = require('../environment/environment') ;
 
 @Component({
   selector: 'app-show-item',
@@ -34,8 +35,8 @@ constructor() { }
   
 marker = L.icon({
     iconUrl: '../../assets/locationIcon.svg',
-    iconSize:     [16, 16], // size of the icon
-    iconAnchor:   [8, 8], // point of the icon which will correspond to marker's location
+    iconSize:     [16, 16], 
+    iconAnchor:   [8, 8], 
 });
 
   ngAfterViewInit(): void {
@@ -45,7 +46,7 @@ marker = L.icon({
 
 
   async getCords(adress: String) {
-    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${adress}&key=AIzaSyBO3TWLX_U5zdhVKCJb4A9GreMOCtzEiqM`//add api key
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${adress}&key=${enviroment.enviroment.apiKey}`
     const res = await fetch(url).then(res => res.json())
     console.log(res)
     return res.results[0].geometry.location

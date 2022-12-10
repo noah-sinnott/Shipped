@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
-mongoose.connect('mongodb+srv://noahs:1234@cluster0.8scw7ij.mongodb.net/test', () => console.log('connected to mongoDB'))
+const enviroment = require('../environment/environment');
+mongoose.connect(enviroment.enviroment.db, () => console.log('connected to mongoDB'))
 
 module.exports = mongoose

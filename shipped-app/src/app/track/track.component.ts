@@ -14,9 +14,9 @@ export class TrackComponent implements OnInit {
   items: any = {
     "data": []
   };
+  
   sendItems: String = JSON.stringify(this.items)
 
-  mock: any[] = [{status: "hiiii"}, {status: "beee"}]
   addForm = this.formBuilder.group({
     code: ["", Validators.required],
     carrier: ["", Validators.required]

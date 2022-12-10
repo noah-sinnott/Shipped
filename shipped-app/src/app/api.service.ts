@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { EmailValidator } from '@angular/forms';
+const enviroment = require('./environment/environment') ;
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class ApiService {
         "email": email, 
     "password": password
 };
-    return this.http.post<any[]>('http://localhost:1234/getTracking', options);
+    return this.http.post<any[]>(`http://localhost:${enviroment.enviroment.port}/getTracking`, options);
   }
 
 
@@ -33,7 +33,7 @@ export class ApiService {
       
     }
 
- return this.http.post<any>(`http://localhost:1234/user`, options);
+ return this.http.post<any>(`http://localhost:${enviroment.enviroment.port}/user`, options);
   }
   
 
@@ -48,7 +48,7 @@ export class ApiService {
     "password": password
   
 };
-    return this.http.post<any>(`http://localhost:1234/track`, options);
+    return this.http.post<any>(`http://localhost:${enviroment.enviroment.port}/track`, options);
   }
 
 
@@ -60,7 +60,7 @@ login(email: any, password: any): Observable<any[]> {
         "password": password
       
     }
- return this.http.post<any>(`http://localhost:1234/login`, options);
+ return this.http.post<any>(`http://localhost:${enviroment.enviroment.port}/login`, options);
   }
 
 }

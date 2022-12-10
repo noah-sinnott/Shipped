@@ -15,7 +15,7 @@ exports.Track = async (req, res) => {
         }
       }
       if (tracking) {
-        res.status(201)
+        res.status(202)
         res.send({ status: 'already tracking' })
       } else {
         const data = await postOne(req.body.carrier, code)
@@ -24,13 +24,13 @@ exports.Track = async (req, res) => {
         res.send({ status: 'done', data })
       }
     } else {
-      res.status(201)
+      res.status(203)
       res.send({ status: 'not found' })
     }
   } catch (e) {
     console.log('error')
     console.log('e', e)
-    res.sendStatus(400)
+    res.sendStatus(500)
   }
 }
 
@@ -46,12 +46,12 @@ exports.getTracking = async (req, res) => {
       res.status(201)
       res.send({ status: 'done', data })
     } else {
-      res.status(201)
+      res.status(202)
       res.send({ status: 'user not found' })
     }
   } catch (e) {
     console.log('e', e)
-    res.sendStatus(400)
+    res.sendStatus(500)
   }
 }
 
@@ -59,7 +59,7 @@ exports.user = async (req, res) => {
   try {
     const exists = await models.findOne({ email: req.body.email })
     if (exists) {
-      res.status(201)
+      res.status(202)
       res.send({ status: 'already exists' })
     } else {
       const user = {
@@ -75,7 +75,7 @@ exports.user = async (req, res) => {
     }
   } catch (e) {
     console.log('e', e)
-    res.sendStatus(400)
+    res.sendStatus(500)
   }
 }
 
@@ -85,7 +85,7 @@ exports.logIn = async (req, res) => {
     res.status(201)
     res.send({ status: 'log in', email: req.body.email, password: req.body.password })
   } else {
-    res.status(201)
+    res.status(202)
     res.send({ status: 'invalid' })
   }
 }

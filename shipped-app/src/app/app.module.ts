@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TrackingComponent } from './tracking/tracking.component';
 import { TrackComponent } from './track/track.component';
-import { FooterComponent } from './footer/footer.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
@@ -22,7 +21,6 @@ import { ShowItemComponent } from './show-item/show-item.component';
     NavbarComponent,
     TrackingComponent,
     TrackComponent,
-    FooterComponent,
     RegisterComponent,
     LoginComponent,
     HomeComponent,
